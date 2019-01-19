@@ -1,0 +1,144 @@
+<!DOCTSTYLE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Welcome</title>
+
+<style>
+@import url("styleSheet.css");
+
+header{
+transition: all 1s ease-in;
+background-image: url(images/2.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-size: 80%;
+}
+
+table{
+float: right;
+}
+td{ 
+border-bottom: 3px solid white;
+padding-bottom: 0.5em;
+padding-top: 1em;
+padding-left: 0.2em;
+font-family: "Century Gothic",sans-serif;
+font-weight: bold;
+color: peru;
+opacity: 0.7;
+
+}
+
+img.resize  {
+  max-width:30%;
+  max-height:30%;
+}
+#right{
+float: right;
+ transition: all .2s ease-in-out;
+    transform: translate3d(0px, 30px, 0);
+    opacity: 0;
+}
+#right.active {
+    transform: translate3d(0px, 0, 0);
+    opacity: 1;
+ 
+}
+img.left{
+clear: both;
+}
+h1{
+color:#ddae73;
+}
+a{
+ text-decoration:none;color:peru;}
+
+img{
+transition: all 2s ease-in-out;
+    transform: translate3d(0px, 30px, 0);
+opacity: 0;
+}
+img.active{
+
+transform: translate3d(0px, 0, 0);
+opacity: 1;
+</style>
+<script>
+
+var isScrolling = false;
+ 
+window.addEventListener("scroll", throttleScroll, false);
+ 
+function throttleScroll(e) {
+    if (isScrolling == false ) {
+        window.requestAnimationFrame(function() {
+          dealWithScrolling(e);
+          isScrolling = false;
+        });
+    }
+    isScrolling = true;
+}   
+
+document.addEventListener("DOMContentLoaded", scrolling, false);
+var imageItems = document.querySelectorAll("img");
+ 
+function dealWithScrolling(e) {
+    // do epic stuff    
+}
+
+function isPartiallyVisible(el) {
+    var elementBoundary = el.getBoundingClientRect();
+ 
+    var top = elementBoundary.top;
+    var bottom = elementBoundary.bottom;
+    var height = elementBoundary.height;
+ 
+    return ((top + height >= 0) && (height + window.innerHeight >= bottom));
+}
+function isFullyVisible(el) {
+  var elementBoundary = el.getBoundingClientRect();
+ 
+  var top = elementBoundary.top;
+  var bottom = elementBoundary.bottom;
+ 
+  return ((top >= 0) && (bottom <= window.innerHeight));
+}
+
+</script>
+
+<header>
+<h1 div class= "brand">minimal.</h1>
+
+<table>
+<tr><td><a href="../home.html">Home</a></td></tr>
+<tr><td>Collection</td></tr>
+<tr><td>Articles</td></tr>
+<tr><td>About</td></tr>
+</table>
+
+</header>
+
+
+<body>
+
+<p>
+
+<img class="resize" class="left" src= "images/3.jpg" alt="">
+</p><p>
+<img class="resize" id="right" src= "images/5.jpeg" alt="">
+</p><p>
+<img class="left" src= "images/4.jpg" alt="">
+</p>
+
+<footer>
+<span class="footer"> Shipping and Delivery
+<span class= "footer"> Terms and Conditions
+<span class="footer"> Newsletter
+<p style="font-size: 0.7em;"> &copy 2018 Harsukh Deol. All rights reserved.
+</p>
+</footer>
+</body>
+
+</html>

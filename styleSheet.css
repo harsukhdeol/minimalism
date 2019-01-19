@@ -1,0 +1,32 @@
+
+header{
+padding: 10em ;
+padding-bottom: 25em;
+}
+
+.brand{
+font-family: "Bell MT";
+font-size: 4em;
+}
+
+p{margin: 10% 20%;
+}
+td{
+text-decoration: none;
+}
+body{
+font-family: "Century Gothic"
+
+}
+
+footer{
+padding: 4em 0em;
+font-size:0.8em;
+
+}
+.footer{
+float: right;
+padding:0em 1em;
+text-transform: uppercase;
+
+}
